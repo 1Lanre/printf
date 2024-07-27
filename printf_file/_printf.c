@@ -53,26 +53,4 @@ int _printf(const char *format, ...)
     va_end(arguments);
     return (count);
 }
-File: main.h
-Make sure your header file main.h includes necessary declarations:
 
-c
-Copy code
-#ifndef MAIN_H
-#define MAIN_H
-
-#include <stdarg.h>
-
-typedef struct {
-    int flag1;
-    int flag2;
-    int flag3;
-} flags_t;
-
-/* Function declarations */
-int _printf(const char *format, ...);
-int _putchar(char c);
-int get_flag(char c, flags_t *flags);
-int (*get_print(char c))(va_list, flags_t *);
-
-#endif /* MAIN_H */
